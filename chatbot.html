@@ -1,0 +1,30 @@
+<!-- templates/chatbot.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interaction</title>
+</head>
+<body>
+    <h1>Chatbot Interaction</h1>
+
+    <div>
+        {% if user_input %}
+            <p>User: {{ user_input }}</p>
+            <p>Chatbot: {{ bot_response }}</p>
+        {% endif %}
+    </div>
+
+    <form action="/chatbot" method="post">
+        <label for="user_input">Your message:</label>
+        <input type="text" name="user_input" id="user_input" required><br>
+        <input type="submit" value="Send"><br>
+        <label for="user_output">Responce:</label>
+        <input type="text" name="user_output" id="user_output" required>
+    </form>
+</body>
+</html>
+
+
